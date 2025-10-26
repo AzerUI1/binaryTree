@@ -1,96 +1,89 @@
-# 🌌 Futuristic Binary Tree in C 🌳
+Binary Trees Project
+https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/400px-Binary_search_tree.svg.png
 
-Welcome to the **Binary Tree in C Project** – learn, explore, and visualize this powerful data structure!  
+📋 Project Overview
+This repository contains implementations of various binary tree data structures and algorithms in C, including:
 
----
+Binary Trees - Basic tree operations and traversals
 
-## 🔹 Features
+Binary Search Trees (BST) - Sorted tree structures
 
-- 🌟 Insert, Delete, Search Nodes  
-- 🌟 Traversals: Inorder, Preorder, Postorder, Level-order  
-- 🌟 Advanced Operations: Height, Depth, Leaf Count, Node Count  
-- 🌟 Visual Representation of Trees  
-- 🌟 Interactive Buttons and Links  
+AVL Trees - Self-balancing binary search trees
 
----
+Binary Heaps - Priority queue implementations
 
-## 🚀 Quick Example in C
+🚀 Quick Navigation
+🔧 Basic Operations
+https://img.shields.io/badge/0-New_Node-blue
+https://img.shields.io/badge/1-Insert_Left-green
+https://img.shields.io/badge/2-Insert_Right-green
+https://img.shields.io/badge/3-Delete_Tree-red
 
-'''c
-#include <stdio.h>
-#include <stdlib.h>
+🔍 Tree Properties
+https://img.shields.io/badge/4-Is_Leaf-yellow
+https://img.shields.io/badge/5-Is_Root-yellow
+https://img.shields.io/badge/9-Height-orange
+https://img.shields.io/badge/10-Depth-orange
 
-struct Node {
-    int data;
-    struct Node* left;
-    struct Node* right;
-};
+📊 Tree Traversals
+https://img.shields.io/badge/6-Pre_order-purple
+https://img.shields.io/badge/7-In_order-purple
+https://img.shields.io/badge/8-Post_order-purple
+https://img.shields.io/badge/20-Level_order-purple
 
-struct Node* createNode(int data){
-    struct Node* node = (struct Node*)malloc(sizeof(struct Node));
-    node->data = data;
-    node->left = node->right = NULL;
-    return node;
-}
+🌳 Advanced Types
+https://img.shields.io/badge/BST-Search_Insert_Remove-success
+https://img.shields.io/badge/AVL-Balanced_Trees-success
+https://img.shields.io/badge/Heap-Priority_Queue-success
 
-struct Node* insert(struct Node* root, int data){
-    if(root == NULL) return createNode(data);
-    if(data < root->data) root->left = insert(root->left, data);
-    else root->right = insert(root->right, data);
-    return root;
-}
+📁 File Structure
+text
+binary_trees/
+├── 📄 0-18*.c                 # Basic binary tree operations
+├── 📄 100-104*.c              # Advanced tree operations
+├── 📄 110-115*.c              # Binary Search Tree implementations
+├── 📄 120-125*.c              # AVL Tree implementations  
+├── 📄 130-135*.c              # Binary Heap implementations
+├── 📄 binary_trees.h          # Header file with type definitions
+├── 📄 binary_tree_print.c     # Tree visualization utility
+└── 📁 tests/                  # Test files for each task
+🛠️ Compilation Examples
+bash
+# Basic node creation
+gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 0-main.c 0-binary_tree_node.c -o 0-node
 
-void inorder(struct Node* root){
-    if(root){
-        inorder(root->left);
-        printf("%d ", root->data);
-        inorder(root->right);
-    }
-}
+# Tree traversals  
+gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 6-main.c 6-binary_tree_preorder.c 0-binary_tree_node.c -o 6-pre
 
-int main(){
-    struct Node* root = NULL;
-    root = insert(root, 50);
-    insert(root, 30);
-    insert(root, 70);
-    insert(root, 20);
-    insert(root, 40);
-    insert(root, 60);
-    insert(root, 80);
+# BST operations
+gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 110-main.c 110-binary_tree_is_bst.c 0-binary_tree_node.c -o 110-is_bst
+📊 Complexity Analysis
+Time Complexities
+Operation	BST	AVL	Heap
+Insert	O(h)	O(log n)	O(log n)
+Search	O(h)	O(log n)	O(n)
+Delete	O(h)	O(log n)	O(log n)
+Where h is the height of the tree
 
-    printf("Inorder Traversal: ");
-    inorder(root);
-    return 0;
-}
+🎯 Learning Objectives
+Understand binary tree data structures and their properties
 
-'''
----
+Implement various tree traversal algorithms
 
+Work with self-balancing trees (AVL)
 
-🌐 Learn More
+Implement priority queues using binary heaps
 
-http://learn-c.org/
-https://www.geeksforgeeks.org/dsa/binary-tree-data-structure/
-https://www.youtube.com/results?search_query=binary+tree+c
+Analyze time and space complexity of tree operations
 
----
+👨‍💻 Author
+Azer Aslanov
 
+<div align="center">
+https://img.shields.io/badge/%F0%9F%94%97-Binary_Trees_Repo-blue?style=for-the-badge
+https://img.shields.io/badge/%F0%9F%92%BB-C_Programming-green?style=for-the-badge
+https://img.shields.io/badge/%F0%9F%93%9A-Data_Structures-red?style=for-the-badge
 
+Mastering tree data structures one node at a time! 🌳
 
-📸 Visual Representation
-
-⚡ Advanced Functions
-
-int height(Node* root); – Compute tree height
-
-int countLeaves(Node* root); – Count leaf nodes
-
-int findMax(Node* root); int findMin(Node* root); – Find max/min value
-
-void levelOrder(Node* root); – BFS Traversal
-
-🔘 Navigation Buttons
-
-<a href="#features"><button style="padding:10px;background-color:#0f0f0f;color:#00ffea;border-radius:5px;">Features</button></a>
-<a href="#quick-example-in-c"><button style="padding:10px;background-color:#0f0f0f;color:#ff00ff;border-radius:5px;">Quick Example</button></a>
-<a href="#learn-more"><button style="padding:10px;background-color:#0f0f0f;color:#00ff00;border-radius:5px;">Learn More</button></a>
+</div>
